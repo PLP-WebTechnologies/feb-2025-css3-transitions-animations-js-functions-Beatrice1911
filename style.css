@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8d5d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+}  
+
+.container {
+  text-align: center;
+}
+
+.flashcard {
+  width: 500px;
+  height: 300px;
+  margin: 20px auto;
+  perspective: 1000px;
+  position: relative;
+  animation: bounceIn 0.6s ease;
+}
+
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 2px solid #f54d3d;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: transform 0.6s ease;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(360deg);
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 26px;
+  background: #f54d3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e64335;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.bounce {
+    animation: bounceIn 0.6s ease;
+}
+  
